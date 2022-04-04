@@ -22,26 +22,22 @@ class clockTime:
     def showTime(self):
         print("Time is {}:{}:{}".format(self.hours,self.minutes,self.seconds))
 
-hours = -1
-minutes = -1
-seconds = -1
-
-while hours<0 or hours>23:
+while True:        
     hours = int(input("Enter hours: "))
-    if hours<0 or hours>23:
+    while hours<0 or hours>23:
         print("Invalid input for hours.")
+        hours = int(input("Enter hours: "))
 
-while minutes<0 or minutes>59:
     minutes = int(input("Enter minutes: "))
-    if minutes<0 or minutes>59:
+    while minutes<0 or minutes>59:
         print("Invalid input for minutes.")
+        minutes = int(input("Enter minutes: "))
 
-while seconds<0 or seconds>59:
     seconds = int(input("Enter seconds: "))
-    if seconds<0 or seconds>59:
+    while seconds<0 or seconds>59:
         print("Invalid input for seconds.")
+        seconds = int(input("Enter seconds: "))
 
-
-c = clockTime()
-c.setTime(hours,minutes,seconds)
-c.showTime()
+    c = clockTime()
+    c.setTime(hours,minutes,seconds)
+    c.showTime()
